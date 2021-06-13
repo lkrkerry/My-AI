@@ -1,0 +1,16 @@
+tran = {
+    "i":"you",
+    "i'm":"you're",
+    "am":"are",
+    "me":"you",
+    "my":"your",
+    "mine":"yours",
+    "you":"i",
+    "you're":"i'm",
+    "are":"am",
+    "your":"my",
+    "yours":"mine",
+    "?":".",
+    ".":"?",
+    "ai":"AI",
+    }
