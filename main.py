@@ -1,3 +1,5 @@
+import os
+os.chdir("D:\\My AI")
 import functions
 # from modules import myNL
 
