@@ -18,12 +18,20 @@ def add():
     ttk.Entry(mf, textvariable=tm).grid(column=1,row=0)
     ttk.Button(mf, text="Add", command=ref).grid(column=2, row=0)
     a = ttk.Button(mf, text="Save", command=save).grid(column=3, row=0)
+    ttk.Button(mf, text="Clear", command=save).grid(column=2, row=1)
     ref()
     mainloop()
 
-def save():
+def clear():
     with open(".\\tdl\\tdl.dat", 'wb') as f:
-        pickle.dump(ans_lst, f)
+        pass
+
+def save():
+    with open(".\\tdl\\tdl.dat", 'rb') as f:
+        anl = pickle.load(f)
+    anl.update(ans_lst)
+    with open(".\\tdl\\tdl.dat", 'wb') as f:
+        pickle.dump(f, anl)
     root.destroy()
     print(ans_lst)
     check()
