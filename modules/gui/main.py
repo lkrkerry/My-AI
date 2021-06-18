@@ -2,6 +2,10 @@ from tkinter import *
 from tkinter import ttk
 # Import tkinter and ttk.
 
+import sys
+sys.path.append(".\\modules\\gui")
+from fe,ke,tdl,mf import *
+
 root = Tk()
 root.title("Kristina")
 
