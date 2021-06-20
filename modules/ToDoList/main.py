@@ -14,11 +14,16 @@ def add():
     todo = StringVar()
     ttk.Entry(mf, textvariable=todo).grid(column=0,row=0)
     tm = StringVar()
-    ttk.Label(mf, text="Example: Fri Jun 11 19:49:28 2021").grid(column=1,row=1)
+    ttk.Label(mf, text="Example: "+time.strftime("%c")).grid(column=1,row=1)
     ttk.Entry(mf, textvariable=tm).grid(column=1,row=0)
     ttk.Button(mf, text="Add", command=ref).grid(column=2, row=0)
     a = ttk.Button(mf, text="Save", command=save).grid(column=3, row=0)
     ttk.Button(mf, text="Clear", command=save).grid(column=2, row=1)
+    try:
+        f = open(".\\tdl\\tdl.dat", 'rb')
+        a = pickle.load(f)
+    except:
+        clear()
     ref()
     mainloop()
 
@@ -31,7 +36,7 @@ def save():
         anl = pickle.load(f)
     anl.update(ans_lst)
     with open(".\\tdl\\tdl.dat", 'wb') as f:
-        pickle.dump(f, anl)
+        pickle.dump(anl, f)
     root.destroy()
     print(ans_lst)
     check()
