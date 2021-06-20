@@ -10,3 +10,5 @@
 test.*
 /test/
 desktop.ini
+*.dat
+/tdl/*.dat
