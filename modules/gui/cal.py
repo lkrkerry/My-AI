@@ -3,3 +3,5 @@ class cal: # define the part of the gui:cal
         self.root = root
         self.srow = srow
         self.scol = scol
+    def start(self):
+        pass
