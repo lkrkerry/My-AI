@@ -18,10 +18,11 @@ def add():
     ttk.Entry(mf, textvariable=tm).grid(column=1,row=0)
     ttk.Button(mf, text="Add", command=ref).grid(column=2, row=0)
     a = ttk.Button(mf, text="Save", command=save).grid(column=3, row=0)
-    ttk.Button(mf, text="Clear", command=save).grid(column=2, row=1)
+    ttk.Button(mf, text="Clear", command=clear).grid(column=2, row=1)
     try:
         f = open(".\\tdl\\tdl.dat", 'rb')
         a = pickle.load(f)
+        f.close()
     except:
         clear()
     ref()
@@ -29,8 +30,9 @@ def add():
 
 def clear():
     with open(".\\tdl\\tdl.dat", 'wb') as f:
-        pass
-
+        pickle.dump({}, f)
+    ref()
+    
 def save():
     with open(".\\tdl\\tdl.dat", 'rb') as f:
         anl = pickle.load(f)
